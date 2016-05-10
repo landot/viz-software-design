@@ -3,7 +3,7 @@
 ## Introduction
 For this assignment, you will learn how to use a reusable treemap chart. Treemaps display data in a rectangular and categorical format.
 
-(imgs/treemap1.png)
+![screenshot of treemap example](imgs/treemap1.png)
 
 ## Data Format
 The format of the data is important in order to properly use the treemap layout. There are 3 variables you can change when using this software: grouping, measure, and selectedDisplay.
