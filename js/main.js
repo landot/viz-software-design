@@ -1,5 +1,6 @@
 $(function() {
-	var myChart = Tree()
+	var myChart = Tree().height(500).width(960).grouping('AGE_GROUP').selectedDisplay('LEADING_CAUSES_OF_DEATH').measure('1990')
+					
 
 // var chartWrapper = d3.select('#vis')
 // 						.append("div")
