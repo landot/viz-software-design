@@ -75,23 +75,18 @@ var Tree = function() {
 			//.attr('transform', 'translate(-20,50)')
 
 		legend.selectAll('rect')
-			.data(data)
+			.data(function(d){return d[grouping]})
 			.enter()
 			.append('rect')
 			.attr('width', 10)
 			.attr('height', 10)
-			.style('fill', function(d) {
-				return color;
-			})
+			.style('fill', function(d){return color})
 
 		legend.selectAll('text')
-			.data(data)
+			.data(function(d){return d[selectedDisplay]})
 			.enter()
 			.append('text')
-			.text(function (d) {
-				for (var i = 0; i < color.domain().length; i++)
-					return color.domain(i);
-			})
+			.text(function(d){return color.domain()})
 
 
 
