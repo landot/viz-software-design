@@ -93,7 +93,6 @@ var Tree = function() {
 		if (!arguments.length) return margin;
 		margin = value;
 		return my;
-
 	};
 
 	// width getter/setter
@@ -101,7 +100,6 @@ var Tree = function() {
 		if (!arguments.length) return width;
 		width = value;
 		return my;
-
 	};
 
 	// height getter/setter
@@ -109,7 +107,6 @@ var Tree = function() {
 		if (!arguments.length) return height;
 		height = value;
 		return my;
-
 	};
 
 	// measure getter/setter
@@ -117,7 +114,6 @@ var Tree = function() {
 		if (!arguments.length) return measure;
 		measure = value;
 		return my;
-
 	};
 
 	// grouping getter/setter
@@ -125,7 +121,6 @@ var Tree = function() {
 		if (!arguments.length) return grouping;
 		grouping = value;
 		return my;
-
 	};
 
 	// selectedDisplay getter/setter
@@ -133,7 +128,6 @@ var Tree = function() {
 		if (!arguments.length) return selectedDisplay;
 		selectedDisplay = value;
 		return my;
-
 	};
 
 	return my;
