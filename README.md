@@ -24,7 +24,7 @@ The following methods can be used to implement and customize your treemap:
 
 - Tree.height(number)
 
-> Constructs a Tree object with the height value set to 'number.'
+	> Constructs a Tree object with the height value set to 'number.'
 
 - Tree.width(number)
 
