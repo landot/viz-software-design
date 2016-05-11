@@ -22,7 +22,7 @@ Now that your data is in the right format, be sure to put the file in the 'data'
 
 The following methods can be used to implement and customize your treemap:
 
-- Tree.height(number)
+- *Tree*.height(number)
 > Constructs a Tree object with the height value set to 'number.'
 - Tree.width(number)
 > Constructs a Tree object with the width value set to 'number.'
