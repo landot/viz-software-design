@@ -7,8 +7,6 @@ var Tree = function() {
 			measure = '1990',
 			grouping = 'AGE_GROUP',
 			selectedDisplay = 'LEADING_CAUSES_OF_DEATH'
-			//legendHeight = 100,
-			//legendWidth = 100
 
 	// internal function being returned
 	function my(selection) {
@@ -17,11 +15,7 @@ var Tree = function() {
 
 		// wrapper div for treemap
 		var div = d3.select(this);
-								// .append("div")
-								// .attr('height', 600)
-								// .attr('width', 600)
-								// .style("left", margin.left + "px")
-								// .style("top", margin.top + "px");
+
 		// arranges divs
 		var position = function() {
 			this.style("left", function(d,i) {return d.x + "px"; })
@@ -29,7 +23,6 @@ var Tree = function() {
 					.style('width', function(d){return d.dx + 'px'})
 					.style("height", function(d) { return d.dy + "px"; })
 					.style("background", function(d) {return !d.values ? color(d[grouping]) : null; })
-
 		}
 
 		// nests data with 'd3.nest'
@@ -58,16 +51,15 @@ var Tree = function() {
 				   .call(position);
 			// update the nodes
 			nodes.transition().duration(500).call(position);
-			console.log(color.domain())
 		}
 
 		// call the draw function
 		draw();
 
 		// constructs and displays legend for the treemap
-		var legend = div.append("g")
-			.attr("class", "legend")
-			//.attr('transform', 'translate(-20,50)')
+		var legend = div.append("svg")
+			.style("margin-left", (width + 20) + 'px')
+			.style("margin-top", ((height / 2) + 20) + 'px')
 
 		legend.selectAll('rect')
 			.data(color.domain())
@@ -75,16 +67,17 @@ var Tree = function() {
 			.append('rect')
 			.attr('width', 10)
 			.attr('height', 10)
-			.style('fill', function(d){return color(d[grouping])})
+			.style('fill', function(d, i){return color(d)})
+			.attr('x', function(d, i){return i})
+		 	.attr('y', function(d, i){return i * 19})
 
 		legend.selectAll('text')
 			.data(color.domain())
 			.enter()
 			.append('text')
-			.text(color.domain())
-
-
-
+			.text(function(d, i){return d})
+			.attr('x', function(d, i){return i + 15})
+			.attr('y', function(d, i){return (i * 19) + 11})
 		})
 	}
 
@@ -131,6 +124,4 @@ var Tree = function() {
 	};
 
 	return my;
-
 }
-
